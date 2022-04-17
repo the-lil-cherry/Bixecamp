@@ -14,5 +14,4 @@ int main(){
         k -=1;
     }
     cout << n << endl;
-
 }
