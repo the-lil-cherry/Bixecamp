@@ -26,16 +26,16 @@ int main(){
     for(int i = 0; i<n; i++){
         soma1 = 0;
         for(int j = 0; j<n ; j++){
-            soma1 = q[j][i];
+            soma1 += q[j][i];
         }
-        if(soma1 != igual){
-            resp = -1;
-        }
-        else{
+        if(soma1 == igual && resp != -1){
             resp = igual;
         }
+        else{
+            resp = -1;
+        }
     }
-    soma1 =0;
+    soma1 = 0;
 
     for(int i = 0; i<n; i++){
         for(int j = 0; j<n; j++){
@@ -44,16 +44,24 @@ int main(){
             }
         }
     }
-    if(soma1!= igual){
-        resp = -1;
+    if(soma1 == igual && resp != -1){
+            resp = igual;
     }
     else{
-        resp = igual;
+            resp = -1;
+    }
+
+    soma1 =0;
+
+    for(int i = 0; i< n; i++){
+        soma1 += q[i][n - 1 -i];
     }
     
-
-
-
-
+    if(soma1 == igual && resp != -1){
+        resp = igual;
+    }
+    else{
+            resp = -1;
+    }
     cout << resp << endl;
 }
